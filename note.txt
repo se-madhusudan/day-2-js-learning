@@ -1,0 +1,14 @@
+////////////////////////////////////////////////    Topics  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+1. Arithmetic Operator: ++(post) --(post) ++(pre) --(pre) ** * / % +(add) -(sub) +(concat)   (all operators in higher to lower precedence order)
+
+2. Comparison Operator: < <= > >= == === != !== (all operators in higher to lower precedence order)
+
+3. Logical Operator: ! && || ??(null coalescing) (all operators in higher to lower precedence order)
+
+
+4. Conditional statements (if, else if, else, switch)
+
+5. Loops (for, while, do while)
+
+/////////////////////////////////////////////   Tasks   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+

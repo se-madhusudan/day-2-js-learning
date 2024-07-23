@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators, Conditionals, Loops</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #584b36;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 80vw;
+            height: 80vh;
+            margin: 10vh auto;
+            min-width: 300px;
+            max-width: 768px;
+            background-color: rgb(221, 236, 236);
+            box-shadow: 0px 0px 50px 50px rgba(68, 69, 70, 0.81);
+            border-radius: 40px;
+        }
+
+        .container h2{
+            text-align: center;
+            background-color: rgb(223, 134, 0);
+            padding: 10px;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .arithmeticOperations, .conditionals, .loops {
+            width: 80%;
+            margin: 5% 10%;
+        }
+
+        .arithmeticOperations input, .conditionals input, .loops input {
+            width: 100%;
+            padding: 4px;
+            margin: 10px 0;
+        }
+
+        .arithmeticOperations button, .conditionals button, .loops button {
+            padding: 4px;
+            display: block;
+            margin: 10px auto;
+            border: none;
+            background-color: rgb(173 219 221);
+            width: 100%;
+            height: 30px;
+            font-weight: bold;
+        }
+
+        .arithmeticOperations button:hover, .conditionals button:hover, .loops button:hover {
+            background-color: rgb(183, 203, 204);
+            cursor: pointer;
+            color: rgb(85, 69, 69);
+        }
+
+        #result, #conditionalResult, #loopsResult {
+            font-weight: 600;
+            color: green;
+            margin: 15px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Arithmetic Operations</h2>
+        <div class="arithmeticOperations">
+            <label for="firstNum">Enter value of a: </label>
+            <input type="number" name="firstNum" id="firstNum" placeholder="10" value="40">
+            <label for="secondNum">Enter value of b: </label>
+            <input type="number" name="secondNum" id="secondNum" placeholder="2" value="20">
+            
+            <button onclick="let sum = parseInt(document.getElementById('firstNum').value) + parseInt(document.getElementById('secondNum').value); document.getElementById('result').innerHTML = 'Result: a + b = ' + sum ">Add: a + b</button>
+            <button onclick="let sub = parseInt(document.getElementById('firstNum').value) - parseInt(document.getElementById('secondNum').value); document.getElementById('result').innerHTML = 'Result: a - b = ' + sub ">Subtract: a - b</button>
+            <button onclick="let mul = parseInt(document.getElementById('firstNum').value ) * parseInt(document.getElementById('secondNum').value) ; document.getElementById('result').innerHTML = 'Result: a * b = ' + mul ">Multiply: a * b</button>
+            <button onclick="let div = parseInt(document.getElementById('firstNum').value ) / parseInt(document.getElementById('secondNum').value) ; document.getElementById('result').innerHTML = 'Result: a / b = ' + div ">Divide: a / b</button>
+            <button onclick="let rem = parseInt(document.getElementById('firstNum').value ) % parseInt(document.getElementById('secondNum').value) ; document.getElementById('result').innerHTML = 'Result: a % b = ' + rem ">Remainder: a % b</button>
+            <button onclick="let pow = parseInt(document.getElementById('firstNum').value ) ** parseInt(document.getElementById('secondNum').value) ; document.getElementById('result').innerHTML = 'Result: a<sup>b</sup> = ' + pow ">Power: a<sup>b</sup></button>
+
+            <p id="result">Result: </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Conditional Statements</h2>
+        <div class="conditionals">
+            <label for="num">Enter a number: </label>
+            <input type="number" name="num" id="num" placeholder="10" value="20">
+
+            <button onclick="let myNum = parseInt(document.getElementById('num').value);  
+            if (myNum > 0) {
+                document.getElementById('conditionalResult').innerHTML = 'Result: ' + myNum + ': Positive integer';
+            } else if (myNum < 0 ){
+                document.getElementById('conditionalResult').innerHTML = 'Result: ' + myNum + ': Negative integer';
+            } else {
+                document.getElementById('conditionalResult').innerHTML = 'Result: ' + myNum + ': Neither positive nor negative integer';
+            }
+            ">Check Number</button>
+
+            <p id="conditionalResult">Result: </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Loops</h2>
+        <div class="loops">
+            <label for="start">Enter starting number: </label>
+            <input type="number" name="start" id="start" placeholder="1" value="1">
+            <label for="end">Enter ending number</label>
+            <input type="number" name="end" id="end" placeholder="10" value="15">
+
+            <button onclick = " 
+                let startNum = parseInt(document.getElementById('start').value); 
+                let endNum = parseInt(document.getElementById('end').value);
+                if(startNum < endNum) {
+                    let res = '';
+                    for(let i = startNum; i <= endNum; i++) {
+                        res += i + ' ';
+                        document.getElementById('loopsResult').innerHTML = 'Result (For loop): ' + res;
+                    }
+                } else {
+                    let res = '';
+                    let i = startNum;
+                    while(i >= endNum) {
+                        res += i + ' ';
+                        document.getElementById('loopsResult').innerHTML = 'Result (For loop): ' + res;
+                        i--;
+                    }
+                }
+
+
+            ">Display Numbers</button>
+
+            <p id="loopsResult">Result: </p>
+        </div>
+    </div>
+    
+</body>
+</html>
